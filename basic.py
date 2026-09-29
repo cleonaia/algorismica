@@ -144,7 +144,7 @@ def es_capicua(paraula):
             b_es_capicua = False
     return b_es_capicua
 
-# Problema 2.6 Divisors
+# Problema 2.6 Palindrom
 
 import itertools
 
@@ -155,6 +155,20 @@ def generar_palindrom(cadena):
         if paraula == paraula[::-1]:
             palindroms.add(paraula)
     return sorted(palindroms)
+
+# Problema 2.7 Divisors 
+
+def divisors(num):
+    petits = []
+    grans = []
+    i = 1
+    while i * i <= num:
+        if num % i == 0:
+            petits.append(i)
+            if i != num // i:
+                grans.append(num // i)
+        i += 1
+    return petits + grans[::-1]
 
     
 
