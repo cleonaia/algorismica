@@ -133,12 +133,19 @@ def equacio(x1, y1, x2, y2):
 # Problema 2.5 Capicua
 
 def es_capicua(paraula):
+    b_es_capicua = paraula == paraula[::-1]
+    return b_es_capicua
 
-    cadena : str = str(input("Introdueix la paraula: "))
+def es_capicua(paraula):
+    b_es_capicua = True
+    n = len(paraula)
+    for i in range(n // 2):
+        if paraula[i] != paraula[n - 1 - i]:
+            b_es_capicua = False
+    return b_es_capicua
+
+
     
-
-
-    return b_es-capicua
 
 
 
