@@ -231,6 +231,18 @@ def sumatori_parelles(llista, valorSuma):
 
 assert sumatori_parelles([3,1,5,2,7,8], 10) == [(2, 8), (3, 7)]
 
+def suma_quadrats(n=100):
+    quadrats = [i**2 for i in range(1, n + 1)]
+    suma_dels_quadrats = sum(quadrats)
+
+    naturals = [i for i in range(1, n + 1)]
+    quadrat_de_la_suma = sum(naturals) ** 2
+
+    diferencia = quadrat_de_la_suma - suma_dels_quadrats
+    return diferencia
+
+assert suma_quadrats() == 25164150
+
 
 
     
