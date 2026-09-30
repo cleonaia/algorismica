@@ -170,6 +170,27 @@ def divisors(num):
         i += 1
     return petits + grans[::-1]
 
+#  Problema 2.8 Factorial menor
+
+def factorial_menor(num):
+    factorials = []
+    factorial = 1
+    i = 1
+
+    while factorial < num:
+        factorial * = 1
+
+        if factorial < num:
+            factorials.append(factorial)
+
+        i += 1
+
+    return factorials
+
+assert factorial_menor(20) == [1, 2, 6]
+
+
+
     
 
 
