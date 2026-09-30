@@ -189,6 +189,48 @@ def factorial_menor(num):
 
 assert factorial_menor(20) == [1, 2, 6]
 
+# Problema 2.9 Minim i maxim 
+
+def minim_maxim(llista):
+    minim = llista[0]
+    maxim = llista[0]
+
+    for i in range(1, len(llista)):
+        if llista[i]<minim:
+            minim = llista[i]
+
+        if llista[i] > maxim:
+            maxim = llista[i]
+
+    return minim, maxim
+
+assert minim_maxim([3, 1, 5, 2, 7, 8]) == (1, 8)
+assert minim_maxim([1, 7, 4, 6, 8, -2, 9, 5]) == (-2, 9)
+
+print(minim_maxim([1, 7, 4, 6, 8, -2, 9, 5]))
+
+
+# Problema 2.10 Sumatori de parelles
+
+def sumatori_parelles(llista, valorSuma):
+    parelles = []
+    ordenada = sorted(llista)
+    esq = 0
+    dre = len(ordenada) - 1
+    while esq < dre:
+        suma = ordenada[esq] + ordenada[dre]
+        if suma == valorSuma:
+            parelles.append((ordenada[esq], ordenada[dre]))
+            esq += 1
+            dre += 1
+        elif suma < valorSuma:
+            esq += 1
+        else:
+            dre -= 1
+    return parelles
+
+assert sumatori_parelles([3,1,5,2,7,8], 10) == [(2, 8), (3, 7)]
+
 
 
     
