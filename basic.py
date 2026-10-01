@@ -307,3 +307,15 @@ def avet(nre):
 avet(7)
 
 
+## ALGORISMES NUMÈRICS
+
+# Problema 3.1 Divisió entera
+
+def divisio_entera(dividend, divisor):
+    quocient = 0
+    while dividend >= divisor:
+        dividend -= divisor
+        quocient += 1
+    return quocient
+assert divisio_entera(10, 2) == 5
+
