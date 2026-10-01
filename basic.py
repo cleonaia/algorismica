@@ -1,3 +1,5 @@
+## BASICS
+
 # Problema 2.1
 
 def convert_temp(temp_celsius) -> float: # no es None porque hace return asi que no puede ser None
