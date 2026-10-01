@@ -189,6 +189,7 @@ def factorial_menor(num):
 
 assert factorial_menor(20) == [1, 2, 6]
 
+
 # Problema 2.9 Minim i maxim 
 
 def minim_maxim(llista):
@@ -231,23 +232,61 @@ def sumatori_parelles(llista, valorSuma):
 
 assert sumatori_parelles([3,1,5,2,7,8], 10) == [(2, 8), (3, 7)]
 
-def suma_quadrats(n=100):
-    quadrats = [i**2 for i in range(1, n + 1)]
+
+# Problema 2.11 Sumes i quadrats
+
+def suma_quadrats( n = 100 ):
+    quadrats = [i**2 for i in range( 1, n+1)]
     suma_dels_quadrats = sum(quadrats)
 
     naturals = [i for i in range(1, n + 1)]
-    quadrat_de_la_suma = sum(naturals) ** 2
+    quadrats_de_la_suma = sum(natural) ** 2
 
-    diferencia = quadrat_de_la_suma - suma_dels_quadrats
+    diferencia = quadrats_de_la_suma - suma_dels_quadrats
     return diferencia
 
-assert suma_quadrats() == 25164150
+assert suma_quadrats() == 251644150
 
+# Problema 2.12 Nombres amics
 
+def suma_divisors(n):
+    if n <= 1:
+        return 0
+    suma = 1
+    d = 2
+    while d * d <= n:
+        if n % d == 0:
+            suma += d
+            if d != n // d:
+                suma += n // d
+        d += 1
+    return suma
 
-    
+def amics(nre1, nre2):
+    sonAmics = suma_divisors(nre1) == nre2 and suma_divisors(nre2) == nre1
+    return sonAmics
 
+assert amics(220, 284) == True
+assert amics(200, 230) == True
 
+# Problema 2.13 Nombres perfectes
 
+def suma_divisors(n):
+    if n <= 1:
+        return 0
+    suma = 1
+    d = 2
+    while d * d <= n:
+        if n % d == 0:
+            suma += d
+            if d != n // d:
+                suma += n // d
+        d += 1
+    return suma
 
+def perfecte(nre):
+    es_perfecte = nre > 1 and suma_divisors(nre) == nre
+    return es_perfecte
 
+assert perfecte(6) == True
+assert perfecte(8) == False
