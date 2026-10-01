@@ -290,3 +290,7 @@ def perfecte(nre):
 
 assert perfecte(6) == True
 assert perfecte(8) == False
+
+# Problema 2.14 Avet
+
+
