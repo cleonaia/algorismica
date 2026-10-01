@@ -293,4 +293,17 @@ assert perfecte(8) == False
 
 # Problema 2.14 Avet
 
+def avet(nre):
+    files = (nre + 1) // 2
+    for i in range(1, files + 1):
+        espais = files - i 
+        asterisc = 2 * i - 1
+        for _ in range(espais):
+            print('', end='')
+        for _ in range(asterisc):
+            print("*", end='')
+        print()
+
+avet(7)
+
 
