@@ -319,3 +319,18 @@ def divisio_entera(dividend, divisor):
     return quocient
 assert divisio_entera(10, 2) == 5
 
+# Problema 3.2 Màxim comú divisor
+
+def mcd(a, b):
+    while a:
+        a, b = b % a, a
+    return b
+
+def reduir_fraccio(numerador, denominador):
+    divisor_comu = mcd(numerador, denominador)
+    numReduit = numerador // divisor_comu
+    denReduit = denominador // divisor_comu
+    return numReduit, denReduit
+
+assert reduir_fraccio(12, 8) == (3, 2)
+
