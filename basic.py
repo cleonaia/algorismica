@@ -403,6 +403,53 @@ def suma_digits_llista (nre, potencia):
     valor = str(nre**potencia)
     return sum([int(digit) for digit in valor])
 
+# Problema 3.8 Solució Eratostenes i primer
+
+from math import sqrt
+
+def eratostenes(n):
+    """
+    Aquesta funció implementa l'algorisme d'Eratòstenes per
+    cercar tots els nombres primers fins a n.
+
+    Parameters
+    ----------
+    n: int
+
+    Returns
+    -------
+    llista_primers: list
+    """
+    sieve = [True for j in range(2, n+1)]
+    for j in range(2, int(sqrt(n))+1):
+        i = j-2
+        if sieve[i]:
+            for k in range(j*j, n+1, j):
+                sieve[k-2] = False
+
+    llista_primers = [j for j in range(2, n+1) if sieve[j-2]]
+    return llista_primers
+
+
+def primer(n):
+    """
+    Aquesta funció retorna l'enèsim primer.
+
+    Parameters
+    ----------
+    n: int
+
+    Returns
+    -------
+    primer: int
+    """
+    x = n * 50
+    sol = eratostenes(x)
+
+
+
+
+
 
 
 
