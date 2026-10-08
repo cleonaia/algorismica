@@ -431,6 +431,8 @@ def eratostenes(n):
     return llista_primers
 
 
+# Problema 3.11 Fibonacci Matricial
+
 def primer(n):
     """
     Aquesta funció retorna l'enèsim primer.
@@ -445,6 +447,37 @@ def primer(n):
     """
     x = n * 50
     sol = eratostenes(x)
+
+    def multiplicacio(A, B):
+        a, b, c, d = A
+        x, y, z, w = B
+
+        return (
+            a * x + b * z,
+            a * y + b * w,
+            c * x + d * z,
+            c * y + d * w,
+        )
+
+    def exponenciacio(A, m):
+        B = A
+        for _ in range(m - 1):
+            B = multiplicacio(B, A)
+        return B
+
+    def fibonacci_matricial(n):
+        """
+        Aquesta calcula els termes de la sèrie de Fibonacci.
+
+        Parameters
+        ----------
+        n: int
+
+        Returns
+        -------
+        int
+        """
+        return exponenciacio([1, 1, 1, 0], n)[1]
 
 
 
