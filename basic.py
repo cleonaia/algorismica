@@ -365,3 +365,49 @@ def reduir_fraccio(numerador, denominador):
 assert reduir_fraccio(12, 8) == (3, 2)
 
 # Problema 3.3.
+# De forma hexadecimal
+
+def convert_hex(xifra):
+    # simbols = {A : 10, B : 11, C : 12, D : 13, E : 14, F : 15}
+
+    potencia = 1
+    decimal = 0
+    for i in range(len(xifra) -1,-1,-1):
+        if xifra[i].isalpha():
+            mult = simbols[xifra[i]]
+        else:
+            mult = int(xifra[i])
+        decimal = mult * potencia + decimal
+        potencia = potencia * 16
+    return decimal
+
+# De forma Digits
+
+def digits(xifra):
+    nreDigits = len(str(xifra))
+    return nreDigits
+
+# Suma Digits
+
+def suma_digits(nre, potencia):
+
+digits = []
+for digit in valor:
+    digits.append(int(digit))
+
+return sum(digits)
+
+# Suma Digits llista
+
+def suma_digits_llista (nre, potencia):
+    valor = str(nre**potencia)
+    return sum([int(digit) for digit in valor])
+
+
+
+
+
+
+
+
+
