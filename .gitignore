@@ -1,1 +1,4 @@
 gemini-code-*.ipynb
+
+# Stakpak session files
+.stakpak/session*
